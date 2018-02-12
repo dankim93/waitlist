@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DinersControllerTest < ActionDispatch::IntegrationTest
+class Api::DinersControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
