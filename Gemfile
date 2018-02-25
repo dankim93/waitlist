@@ -36,6 +36,8 @@ gem 'pry-rails'
 
 gem 'binding_of_caller'
 
+gem 'responders'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
