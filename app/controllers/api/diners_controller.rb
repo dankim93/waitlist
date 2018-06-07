@@ -26,7 +26,8 @@ class Api::DinersController < Api::BaseController
     params.require(:diner).permit(
       :name,
       :phone_number,
-      :size
+      :size,
+      :table_id
     )
   end
 end
