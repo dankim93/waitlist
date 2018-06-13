@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :waiters, only: [:index, :create, :show, :destroy]
     resources :diners, only: [:index, :create, :show, :destroy]
-    resources :tables, only: [:create, :show, :destroy]
+    resources :tables, only: [:index, :create, :show, :destroy]
   end
 end
