@@ -21,6 +21,11 @@ class Api::DinersController < Api::BaseController
     @diner.destroy!
   end
 
+  def test
+    @diner = Diner.where({ table_id: nil })
+    respond_with @diner
+  end
+
   private
   def diner_params
     params.require(:diner).permit(
