@@ -3,16 +3,18 @@ Rails.application.routes.draw do
   root "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
-    # resources :diners, only: [:index, :create, :show, :destroy]
-    resources :diners do
-      # get 'test'
-      collection { get 'test' } # /api/diners/test
+    resources :diners, only: [:index, :create, :show, :destroy] do
+      collection do
+        get 'nonmatched'  # /api/diners/nonmatched
+      end
     end
 
+    resources :tables, only: [:index, :create, :show, :destroy] do
+      collection do
+        get 'available' # /api/tables/available
+      end
+    end
 
-
-
-
-    resources :tables, only: [:index, :create, :show, :destroy]
+    # resources :tables, only: [:index, :create, :show, :destroy]
   end
 end

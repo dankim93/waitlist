@@ -21,8 +21,9 @@ class Api::DinersController < Api::BaseController
     @diner.destroy!
   end
 
-  def test
+  def nonmatched #potentially be used for waitlist
     @diner = Diner.where({ table_id: nil })
+    @diner = @diner.sort { |a, b| a.created_at <=> b.created_at }
     respond_with @diner
   end
 
