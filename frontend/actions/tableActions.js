@@ -1,5 +1,5 @@
 export const RECEIVE_TABLES = 'RECEIVE_TABLES';
-export const CREATE_TABLE = 'CREATE_TABLE';
+export const RECEIVE_TABLE = 'RECEIVE_Table';
 export const REMOVE_TABLE = 'REMOVE_TABLE';
 // export const AVAILABLE_TABLES = 'AVAILABLE_TABLES';
 
@@ -8,7 +8,7 @@ export const receiveTables = tables => ({
   tables
 });
 
-export const createTable = table => ({
+export const receiveTable = table => ({
   type: CREATE_TABLE,
   table
 });
@@ -43,7 +43,7 @@ export const createTable = table => dispatch => ({
     tables.json();
   })
   .then(table => {
-    dispatch(createTable(table.json()));
+    dispatch(receiveTable(table.json()));
   }
 });
 
